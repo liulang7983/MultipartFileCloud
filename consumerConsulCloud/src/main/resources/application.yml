@@ -1,0 +1,30 @@
+server:
+  port: 8002
+
+
+spring:
+#  servlet:
+#    multipart:
+#      max-request-size: 52128800
+  application:
+    name: consumerConsulCloud
+  cloud:
+    consul:
+      host: 127.0.0.1
+      port: 8500
+      discovery:
+        prefer-ip-address: true
+        tags:
+          - app
+    inetutils:
+      preferred-networks:
+        - 127.0.0.1
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 10000
+        readTimeout: 60000
+
+listFile: /hexapp/ocrserver/ai-fgw-serving/listFile
+

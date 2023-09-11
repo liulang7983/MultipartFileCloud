@@ -1,0 +1,23 @@
+package com.controller;
+
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+
+/**
+ * @author 李明
+ * @date Created in 2023/8/31 23:58
+ */
+@RestController
+@RequestMapping("fas")
+public class FasController {
+    @PostMapping(value = "/asyncUploadFiles",consumes = MediaType.MULTIPART_FORM_DATA_VALUE/*, produces = MediaType.APPLICATION_JSON_VALUE*/)
+    String asyncUploadFiles(@RequestPart("files") MultipartFile[] files, @RequestParam("fsUuid")String fsUuid){
+        System.out.println(fsUuid);
+        System.out.println(files.length);
+        for (int i = 0; i < files.length; i++) {
+            System.out.println(files[i].getOriginalFilename());
+        }
+        return "成功";
+    }
+}
