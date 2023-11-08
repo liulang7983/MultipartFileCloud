@@ -27,6 +27,10 @@ feign:
         readTimeout: 60000
 
 zuul:
+  #禁用默认的的异常处理filter,此时才会走自己的ErrorFilter
+  SendErrorFilter:
+    error:
+      disable: true
   #路由排除，此时路径中含有test1的会被排除，不走网关
   ignored-patterns: /**/test1/**
   #路由排除，服务id排除，多个的话逗号分割
