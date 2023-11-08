@@ -1,0 +1,48 @@
+server:
+  port: 8003
+
+
+spring:
+#  servlet:
+#    multipart:
+#      max-request-size: 52128800
+  application:
+    name: zuulCloud
+#eureka配置
+eureka:
+  client:
+    #表示是否将自己注册进eureka  默认为true
+    register-with-eureka: true
+    #是否从EurekaServer中抓取已有的注册信息，默认为true，单点无所谓，集群必须设置true才能和ribbon使用负载均衡
+    fetch-registry: true
+    service-url:
+      #单机配置
+      defaultZone: http://localhost:7001/eureka
+
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 10000
+        readTimeout: 60000
+
+zuul:
+  #路由排除，此时路径中含有test1的会被排除，不走网关
+  ignored-patterns: /**/test1/**
+  #路由排除，服务id排除，多个的话逗号分割
+  ignored-services: conaumer1-serving
+  #路由前缀，就是原先的访问加上他才行
+  prefix: /api
+  routes:
+    consumerCloud:
+      path: /consumerCloud/**
+      serviceId: consumerCloud
+    routes:
+      consumerCloud:
+        path: /conaumer-serving/**
+        serviceId: conaumer-serving
+  ribbon:
+    eager-load:
+      enabled: true
+
+

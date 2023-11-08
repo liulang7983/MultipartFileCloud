@@ -2,14 +2,17 @@ package com.lm;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 
 /**
  * @author ming.li
- * @date 2023/9/1 11:49
+ * @date 2023/11/6 23:02
  */
+
 @SpringBootApplication
-public class ConsulMain {
+@EnableFeignClients
+public class ServingApp {
     public static void main(String[] args) {
-        SpringApplication.run(ConsulMain.class,args);
+        SpringApplication.run(ServingApp.class, args);
     }
 }

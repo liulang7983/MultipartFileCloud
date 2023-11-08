@@ -11,6 +11,9 @@
         <module name="consumerCloud" />
         <module name="eurekaCloud" />
         <module name="producerCloud" />
+        <module name="conaumer-serving" />
+        <module name="conaumer1-serving" />
+        <module name="zuulCloud" />
       </profile>
     </annotationProcessing>
   </component>

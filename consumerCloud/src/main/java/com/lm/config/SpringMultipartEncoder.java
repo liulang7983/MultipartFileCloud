@@ -1,22 +1,20 @@
 package com.lm.config;
 
-import java.lang.reflect.Type;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
-
 import feign.RequestTemplate;
 import feign.codec.EncodeException;
 import feign.codec.Encoder;
 import feign.form.ContentType;
 import feign.form.FormEncoder;
 import feign.form.MultipartFormContentProcessor;
-
 import feign.form.spring.SpringManyMultipartFilesWriter;
 import feign.form.spring.SpringSingleMultipartFileWriter;
-import lombok.val;
 import org.springframework.web.multipart.MultipartFile;
+
+import java.lang.reflect.Type;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 
 /**
  * @author 李明

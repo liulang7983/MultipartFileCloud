@@ -1,15 +1,17 @@
-package com.lm;
+package com.zuul;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 
 /**
  * @author ming.li
- * @date 2023/9/1 11:49
+ * @date 2023/11/6 21:23
  */
 @SpringBootApplication
-public class ConsulMain {
+@EnableZuulProxy
+public class ZuulApplication {
     public static void main(String[] args) {
-        SpringApplication.run(ConsulMain.class,args);
+        SpringApplication.run(ZuulApplication.class,args);
     }
 }

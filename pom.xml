@@ -13,6 +13,9 @@
         <module>consumerCloud</module>
         <module>eurekaCloud</module>
         <module>consumerConsulCloud</module>
+        <module>zuulCloud</module>
+        <module>conaumer-serving</module>
+        <module>conaumer1-serving</module>
     </modules>
     <dependencyManagement>
     <dependencies>
