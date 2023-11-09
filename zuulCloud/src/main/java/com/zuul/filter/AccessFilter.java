@@ -50,17 +50,18 @@ public class AccessFilter extends ZuulFilter {
     public Object run() throws ZuulException {
         System.out.println("我是AccessFilter");
         //此时会走ErrorFilter
-        Integer.valueOf("ss");
-        RequestContext rc = RequestContext.getCurrentContext();
-        HttpServletRequest request = rc.getRequest();
+        //Integer.valueOf("ss");
+        RequestContext ctx = RequestContext.getCurrentContext();
+        HttpServletRequest request = ctx.getRequest();
         String token = request.getParameter("token");
+        System.out.println("我是AccessFilter,获取name:"+ctx.get("name"));
         if (token==null){
             //请求结束，不再继续走
-            rc.setSendZuulResponse(false);
-            rc.setResponseStatusCode(HttpStatus.UNAUTHORIZED.value());
+            ctx.setSendZuulResponse(false);
+            ctx.setResponseStatusCode(HttpStatus.UNAUTHORIZED.value());
             PrintWriter writer=null;
             try {
-                writer=rc.getResponse().getWriter();
+                writer=ctx.getResponse().getWriter();
                 writer.print("message:401");
             } catch (IOException e) {
                 e.printStackTrace();

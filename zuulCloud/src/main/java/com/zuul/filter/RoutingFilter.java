@@ -25,7 +25,7 @@ public class RoutingFilter extends ZuulFilter {
     */
     @Override
     public String filterType() {
-        return "routing";
+        return "route";
     }
     /*顺序
      数字越小，优先级越高

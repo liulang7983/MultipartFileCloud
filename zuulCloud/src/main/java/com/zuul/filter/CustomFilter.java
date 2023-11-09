@@ -46,8 +46,9 @@ public class CustomFilter extends ZuulFilter {
     @Override
     public Object run() throws ZuulException {
         System.out.println("我是CustomFilter");
-        RequestContext rc = RequestContext.getCurrentContext();
-        HttpServletRequest request = rc.getRequest();
+        RequestContext ctx = RequestContext.getCurrentContext();
+        HttpServletRequest request = ctx.getRequest();
+        ctx.set("name","张三");
         System.out.println("Method："+request.getMethod());
         logger.info("Method："+request.getMethod()+",URL:"+request.getRequestURI().toString());
         return null;

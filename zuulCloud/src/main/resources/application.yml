@@ -49,4 +49,8 @@ zuul:
     eager-load:
       enabled: true
 
-
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream
