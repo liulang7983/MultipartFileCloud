@@ -16,6 +16,7 @@
         <module>zuulCloud</module>
         <module>conaumer-serving</module>
         <module>conaumer1-serving</module>
+        <module>mavenServing</module>
     </modules>
     <dependencyManagement>
     <dependencies>

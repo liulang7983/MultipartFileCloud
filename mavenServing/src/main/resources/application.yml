@@ -1,0 +1,6 @@
+server:
+  port: 8008
+lm:
+  name: 张三
+  age: 12
+  message: 熊孩子

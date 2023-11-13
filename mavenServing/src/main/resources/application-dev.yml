@@ -1,0 +1,6 @@
+server:
+  port: 8008
+lm1:
+  name: 李四
+  age: 122
+  message: 熊孩子1
