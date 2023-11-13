@@ -10,13 +10,15 @@
         <module name="consumerConsulCloud" />
         <module name="consumerCloud" />
         <module name="eurekaCloud" />
-        <module name="mavenServing" />
         <module name="producerCloud" />
         <module name="conaumer-serving" />
         <module name="conaumer1-serving" />
         <module name="zuulCloud" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="mavenServing" target="8" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
