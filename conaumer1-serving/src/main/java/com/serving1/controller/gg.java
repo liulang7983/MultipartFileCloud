@@ -7,4 +7,5 @@ package com.serving1.controller;
 public class gg {
     private String a;
     private String b;
+    private String c;
 }
