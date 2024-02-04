@@ -5,4 +5,5 @@ package com.serving1.controller;
  * @date 2023/11/10 19:36
  */
 public class gg {
+    private String s;
 }
