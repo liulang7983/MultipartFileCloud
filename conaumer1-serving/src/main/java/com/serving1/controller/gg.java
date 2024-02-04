@@ -9,4 +9,5 @@ public class gg {
     private String b;
     private String a;
     private String c;
+    private String d;
 }
