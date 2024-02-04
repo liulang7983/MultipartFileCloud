@@ -8,4 +8,5 @@ public class gg {
     private String s;
     private String b;
     private String a;
+    private String c;
 }
