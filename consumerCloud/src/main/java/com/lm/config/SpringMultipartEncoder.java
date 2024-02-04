@@ -31,7 +31,7 @@ public class SpringMultipartEncoder extends FormEncoder {
         processor.addFirstWriter(new SpringSingleMultipartFileWriter());
         processor.addFirstWriter(new SpringManyMultipartFilesWriter());
     }
-
+    @Override
     public void encode(Object object, Type bodyType, RequestTemplate template) throws EncodeException {
         if (bodyType.equals(MultipartFile[].class)) {
             MultipartFile[] files = (MultipartFile[])((MultipartFile[])object);
